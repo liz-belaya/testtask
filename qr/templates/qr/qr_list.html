@@ -1,0 +1,11 @@
+
+{% extends 'qr/base.html' %}
+{% block content %}
+    {% for qr in qrs %}
+        <div>
+            <h2><a href="{% url 'qr_detail' pk=qr.pk %}">{{ qr.name }}</a></h2>
+            <p>published: {{ qr.published_date }}</p>
+            <p>{{qr.city}} {{qr.campaing}}, {{qr.sourse}}, {{qr.product}}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
