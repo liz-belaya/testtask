@@ -3,7 +3,19 @@
 {% block content %}
     {% for qr in qrs %}
         <div>
-            <h2> <span> &#9998 </span> <a href="{% url 'qr_edit' pk=qr.pk %}">{{ qr.name }}</a></h2>
+            <h2> <span> &#9998 </span>
+                <a href="{% url 'qr_edit' pk=qr.pk %}">{{ qr.name }}</a>
+                <a href="{% url 'qr_remove' pk=qr.pk %}">
+                    <span style="font-size:25px;">&#10005</span></a>
+            </h2>
+            <a  href="{% url 'qr_create' pk=qr.pk %}" class="btn btn-default" style="float:right">
+                Create QR
+            </a>
+            <a  href="{% url 'qr_transition' pk=qr.pk %}" style="float:right">
+                Future QR image
+            </a>
+
+        <!--    <p><img scr="/qr_images/qr13.png"> </p> -->
             <p>published: {{ qr.published_date }}</p>
             <p>{{qr.city}} {{qr.campaing}}, {{qr.sourse}}, {{qr.product}}</p>
             <p>Transitions - {{qr.number_of_transitions}}</p>

@@ -24,6 +24,7 @@ class Migration(migrations.Migration):
                 ('created_date', models.DateTimeField(default=django.utils.timezone.now)),
                 ('published_date', models.DateTimeField(blank=True, null=True)),
                 ('number_of_transitions', models.IntegerField(default=0)),
+
             ],
         ),
     ]

@@ -6,4 +6,4 @@ class QrForm(forms.ModelForm):
 
     class Meta:
         model = Qr
-        fields = ('name','city','campaign','sourse','product',)
+        fields = ('name','city','campaign','sourse','product','image')
