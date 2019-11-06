@@ -55,9 +55,9 @@ def qr_create(request,pk):
     image.add_data(qr)
     image.make(fit=True)
     img = image.make_image()
-    name = 'qr'+str(pk)+'.png'
-    img.save("qr_images/"+str(name))
-    qr.image = ("qr_images/"+str(name))
+    name = 'qr'+str(pk)+'.jpg'
+    img.save("qr/static/images/"+str(name))
+    qr.image = ("qr/static/images/"+str(name))
     qr.save()
     return redirect('qr_list')
 

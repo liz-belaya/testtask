@@ -13,7 +13,7 @@ class Qr(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     number_of_transitions = models.IntegerField(default=0)
-    image = models.ImageField(null=True, blank=True, upload_to="qr_images/" )
+    image = models.ImageField(null=True, blank=True, upload_to="static/images/", )
 
     def publish(self):
         self.published_date = timezone.now()
